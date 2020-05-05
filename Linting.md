@@ -16,8 +16,8 @@ Formating and Linting
 
 ## Type Hints & Docstrings
 * Type Hints for weakly typed languages like JS/Python -> Help Editor
-* Docstring See also [PEP484](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html) 
-
+* Docstring See also [PEP484 Type Hints](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html) 
+* See also [Microsoft4Developers](https://www.youtube.com/watch?v=P1B0ytn6VPU&list=PLlrxD0HtieHiXd-nEby-TMCoUNwhbLUnj&index=2)
 
 ```python
 def print_hello(name: str) -> str:
@@ -32,3 +32,7 @@ def print_hello(name: str) -> str:
 	print('hello, ' + name)
 ```
 ***
+## VS Code
+* CTRL + SHIFT + P > Enable Linting
+* CTRL + SHIFT + P > Run Linting
+* CTRL + SHIFT + P > Select Linter
