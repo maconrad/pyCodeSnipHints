@@ -27,7 +27,8 @@ What's new
         # Sync: One Two One Two One Two
 ```
 ***
-
+## 3.5
+* Type Hints - PEP 484 
 
 ## 3.6
 * Pathlib
@@ -83,8 +84,28 @@ What's new
 ```
 
 * F-Strings - PEP498
+```python
+    # Before
+    print('He said his name is {name}.'.format(name=name))
+    print('He said his name is {}.'.format(name))
+    
+    # Now
+    print(f'He said his name is {name}.')
+```
+
+
+
 * Enhancing of Type Hints (PEP 484)
   * Now also for Variables (PEP 526)
+
+```python
+    class A:
+        name:str
+
+    A.__annotations__
+    # Output: {'name': <class 'str'>}
+```
+
 * UTF-8 on Windows (PEP 528, 529)
 * Others:
   * Async Generators & Comprehension (PEP 525, PEP 530)
@@ -94,14 +115,25 @@ What's new
   * Interpreter abbreviates long sequences of tracebacks
   * json module supports binary
 
-```python
-    class A:
-        name:str
-
-    A.__annotations__
-    # Output: {'name': <class 'str'>}
-```
 ***
+
+## 3.7
+* breakpoint()
+  * PYTHONBREAKPOINT=0 ignores calls to breakpoint()
+* 
+
+```python
+    # Before
+    def divide(e, f):
+        import pdb; pdb.set_trace()
+        return f / e
+
+    # Now
+    def divide(e, f):
+        breakpoint()
+        return f / e
+
+```
 
 ## 3.8
 * Walrus Operator (:=) - PEP572
@@ -134,4 +166,5 @@ What's new
 
 ## Links
 * See DataFlair [Py36](https://data-flair.training/blogs/whats-new-in-python-3-6/)
+* See RealPython [Py37](https://realpython.com/python37-new-features/)
 * See DataFlair [Py38](https://data-flair.training/blogs/whats-new-in-python/)
