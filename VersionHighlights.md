@@ -28,7 +28,7 @@ What's new
 ```
 ***
 ## 3.5
-* Type Hints - PEP 484 
+* Type Hints - PEP 484
 
 ## 3.6
 * Pathlib
@@ -52,7 +52,7 @@ What's new
 
     # Full Path creation
     new_file_path = Path.joinpath(cwd, 'new_file.txt')
-    
+
     # File info
     print(new_file)
     print(new_file_path.name)
@@ -80,7 +80,7 @@ What's new
     stream.close()
     stream2.flush() # Write to file
     stream2.close() # Flush and close stream
-    
+
 ```
 
 * F-Strings - PEP498
@@ -88,7 +88,7 @@ What's new
     # Before
     print('He said his name is {name}.'.format(name=name))
     print('He said his name is {}.'.format(name))
-    
+
     # Now
     print(f'He said his name is {name}.')
 ```
@@ -120,7 +120,7 @@ What's new
 ## 3.7
 * breakpoint()
   * PYTHONBREAKPOINT=0 ignores calls to breakpoint()
-* 
+*
 
 ```python
     # Before
@@ -140,11 +140,11 @@ What's new
   * assign variables inside an expression
 * Others
   * Positional only arguments - PEP570
-  * Easier debugging of f-strings 
+  * Easier debugging of f-strings
 * Final Keywork - PEP591
   * On Class = No Inheritance
   * On Var = No reassigning
-  * On Method = No Override 
+  * On Method = No Override
 * Example:
 
 ```python
@@ -163,6 +163,22 @@ What's new
 ## 3.9
 * Dict Merge Operator
 
+## 3.10
+* Annotations now default (PEP563)
+  * Not anymore via future
+* Also TypeAlias, TypeUnion annotations (PEP613, PEP604)
+
+  ```python
+      # BEFORE
+      from __future__ import annotations
+      from typing import Union, Any, Type, SupportsFloat
+
+      ...
+      def __init__(self, x: SupportsFloat, y: SupportsFloat): -> float
+        ...
+      # Now
+      ...
+  ```
 
 ## Links
 * See DataFlair [Py36](https://data-flair.training/blogs/whats-new-in-python-3-6/)
