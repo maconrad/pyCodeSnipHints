@@ -5,7 +5,7 @@ Lambdas
 * Instead of explicit function
 * Often Replace simple functions
 * Think Anonymous function in JS
-* Example problem that it solves: 
+* Example problem that it solves:
     * Some functions like sort() only work with primitive types like str or int. But when it comes to a dict, they need to know based on which item to sort() etc.
 
 ```python
@@ -43,12 +43,12 @@ Lambdas
         {'name': 'Robin', 'age': 26},
     ]
 
-    # Reads as: Lambda function that accepts 
+    # Reads as: Lambda function that accepts
     #           param called item: return item['name']
     # Sort by Name
     actors.sort(key=lambda item: item['name'])
     print(actors)
-    
+
     # Sort by length of name
     actors.sort(key=lambda item: len(item['name']))
     print(actors)
@@ -79,6 +79,20 @@ Lambdas
         return filter_array(self.elements, lambda elem: elem['parent_id'] == parent['id'])
 
 ```
+
+## Real World Example 2
+* Same as before could be done with the integrated python filter function
+
+```python
+    # Example taken from Tetration App Scopes Filtering
+    #  https://{{URL}}/openapi/v1/app_scopes
+
+    def get_children(self, parent):
+        """Get immediate descendants of a certain element"""
+        filtered_children = list(filter(lambda elem: elem['parent_id'] == parent['id'], self.elements))
+        return filtered_children
+```
+
 
 
 

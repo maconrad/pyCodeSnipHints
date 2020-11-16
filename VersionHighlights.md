@@ -99,8 +99,18 @@ What's new
   * Now also for Variables (PEP 526)
 
 ```python
+    # BEFORE
+    primes = []  # type: List[int]
+    stats = {}  # type: Dict[str, int]
+    captain = ...  # type: str
+
+    # Now
+    primes: List[int] = []
+    captain: str
+    stats: ClassVar[Dict[str, int]] = {}
+
     class A:
-        name:str
+        name: str
 
     A.__annotations__
     # Output: {'name': <class 'str'>}
