@@ -7,8 +7,8 @@ Libraries
 | Library | function / Class etc. | Description |
 |-----------|---------------------|----------------|
 |string  |{0:d} / {:^30}   |Format, align etc.  |
-|functools  |reduce   |N to 1 mapping  |
-|itertools  |               |  |
+|functools  |reduce, wraps, total_ordering, cache, singledispatch |N to 1 mapping, decorators, caching, method overloading  |
+|itertools  |groupby, iter, next, compress, count, cycle, repeat, starmap, combination, permutation, product, islice, accumulate, filterfalse, tee | iterator tools |
 |futures    |annotations          |     |
 |re         |          |Regex           |
 |datetime   |          |                |
