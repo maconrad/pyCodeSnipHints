@@ -6,8 +6,13 @@ python:
 
 # command to install dependencies
 install:
-  - pip install -r requirements.txt
+  - pip install -r requirements-dev.txt
+# - python setup.py develop
 
 # command to run tests
 script:
   - pytest
+
+notifications:
+  email:
+    on_success: never
