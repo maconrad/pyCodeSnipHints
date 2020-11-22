@@ -4,8 +4,8 @@ Formating and Linting
 ## PEP8
 * spaces, not tabs
 * <span style="color:green">variable_name</span>, not <span style="color:red">variableName</span> or <span style="color:red">VariableName</span>
-* No extra whitespaces  
-{'good': 42}  
+* No extra whitespaces
+{'good': 42}
 {'bad' : 20}
 ***
 

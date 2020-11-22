@@ -36,7 +36,7 @@ Libraries
 |dataclasses|@dataclass|Annotate instance vars, __init__(), __repr__() and other methods such as __lt__() are auto-generated, PEP557|
 |timeit|||
 |test|||
-|unittest|setUp(), tearDown(), @skipIf, python -m unittest discover|Built-in Unit Testing Library|
+|unittest|setUp(), tearDown(), @patch, @skipIf, python -m unittest discover|Built-in Unit Testing Library to unittest.mock for Mocking|
 |doctest|||
 |pydoc|||
 |typing|||
@@ -78,6 +78,12 @@ Libraries
 
 ## PyPi
 * Building / Linting / Testing
+* Mocking
+  * Flask
+  * Falcon + Gunicorn
+  * Prism API Server (based on Openapi document)
+  * Stoplight (hosted mock api server)
+  * Postman (Easy mocking if access to real api -> save examples)
 
 
 | Library | function / Class etc. | Description |
@@ -107,6 +113,7 @@ Libraries
 |Request    |                |                |
 |Django    |                     |                |
 |Flask    |      |                |
+|Falcon||E.g. use for API Mocking/Stubbing|
 |BeautifulSoup    |      |
 |Selenium  |
 |    |      |

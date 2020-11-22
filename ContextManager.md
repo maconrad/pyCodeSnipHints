@@ -7,7 +7,7 @@ Context Managers and Yield
 * aiohttp Session Object (reuse session)
 
 ```python
-    # Try / Catch 
+    # Try / Catch
     try:
         stream = open('demo.txt', 'wt')
         stream.write('abc')
@@ -37,8 +37,8 @@ Context Managers and Yield
 
 ***
 
-## Create Context Manager 
-* Needs \_\_enter\_\_ and \_\_exit\_\_ Implementations 
+## Create Context Manager
+* Needs \_\_enter\_\_ and \_\_exit\_\_ Implementations
 
 ```python
     class Connection:
@@ -58,7 +58,7 @@ Context Managers and Yield
 ```
 ***
 
-## Create Context Manager with Yield 
+## Create Context Manager with Yield
 * contextmanager manager decorator
   1. Before yield is executed when entering the with block (1st print)
   2. Then the block is executed (print in with block)

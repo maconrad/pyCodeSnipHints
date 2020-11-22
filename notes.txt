@@ -4,7 +4,7 @@
 python -m unittest
 
 # verbose
-python -m unittest -v 
+python -m unittest -v
 
 # Discover in current Directory
 python -m unittest discover
@@ -20,7 +20,7 @@ python -m pytest -vv --durations=3 -m dummy
 
 # Pytest can have fixtures = setups etc.
 
-# Tox 
+# Tox
 # Testing in multiple environments
 
 # Create ini file automatically
@@ -36,3 +36,11 @@ tox -r
 # -- tox should ignore these arguments and pass them on to testing
 tox -e py38
 tox -e py38 -- tests -k unit
+
+
+# Pre-Commit
+# Generate sample config
+pre-commit sample-config
+
+# Check all files via command line
+pre-commit run --all-files

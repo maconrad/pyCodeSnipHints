@@ -40,11 +40,11 @@ Classes and Mixins
             # Access __name via property (behind scenes)
             # Always use property -> validation
             self.name = name # Property
-            
+
         @property
         def name(self):
             return self.__name # Field
-        
+
         @name.setter
         def name(self, value)
             # Optional validation
@@ -59,7 +59,7 @@ Classes and Mixins
   * Everything inherits from Object
     * Override \_\_methods\_\_ (like \_\_str\_\_)
   * All methods in python are "virtual"=can be overriden
-  * super keyword to access parent class 
+  * super keyword to access parent class
     * Must always call parent constructor!
 * Composition (done with Properties)
   * "has a" Relationship
@@ -92,7 +92,7 @@ Classes and Mixins
             # Parent call, not auto calls parent
             super().say_hello()
             print('xy')
-        
+
 ```
 ```python
     # Using Class
@@ -102,7 +102,7 @@ Classes and Mixins
     print(isinstance(actor1, Actor))    # True
     # F-String because auto-string conversion (here boolean)
     print(f'Is it an Actor? {isinstance(actor1, Actor))}'    # True
-    print(isinstance(actor1, Person))   # True 
+    print(isinstance(actor1, Person))   # True
     print(issubclass(Actor, Person))    # True
 ```
 
@@ -119,7 +119,7 @@ Classes and Mixins
             self.title = ''
         def log(self):
             print('Log Msg from ' + self.title)
-    
+
     Class Connection:
         def __init__(self):
             self.server = ''

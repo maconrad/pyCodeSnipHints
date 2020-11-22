@@ -57,7 +57,7 @@ def concat(a: AnyStr, b:AnyStr) -> AnyStr:
     return a + b
 
 print(concat('Helo', 'World'))
-# Uncomment and run python -m mypy Snips/try.py   
+# Uncomment and run python -m mypy Snips/try.py
 # reveal_type(concat(b'foo', b'bar'))
 print(concat(10, 10)) # Works but type checker complains!
 
@@ -118,7 +118,7 @@ class Series(Generic[ValueType]):
     @overload
     def __getitem__(self, index: int) -> ValueType:
         ...
-    
+
     @overload
     def __getitem__(self, index: slice) -> Sequence[ValueType]:
         ...

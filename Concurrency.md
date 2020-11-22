@@ -12,7 +12,7 @@ Async & Await
 
 ## Asyncio Module
 * Async / Await
-* streams 
+* streams
 * synchronization locks
 * Exception mgmt
 * Tasks that runs async
@@ -25,7 +25,7 @@ Async & Await
   * logically pause code until Taks finished
   * (Think Promise from JS)
   * Needs to be inside async construct/block
-* aiohttp 
+* aiohttp
 * Introduced in 3.4, changed often until 3.7
 
 
@@ -39,20 +39,20 @@ async def load_data(session, delay):
     await resp.text()
 
 async def main():
-  start_time = default_timer()  
+  start_time = default_timer()
 
   async with aiohttp.ClientSession() as session:
     two_sec_delay_task = asyncio.create_task(load_data(session, 2))
     three_sec_delay_task = asyncio.create_task(load_data(session, 3))
-    
+
     await asyncio.sleep(1)
     print('do other stuff')
 
     two_result = await two_sec_delay_task
-    three_result = await three_sec_delay_task  
+    three_result = await three_sec_delay_task
 
     elapsed_time = default_timer() - start_time
-    print(f'The operation took {elapsed_time:.2} seconds') 
+    print(f'The operation took {elapsed_time:.2} seconds')
 
 # Cannot just be called with main() as it is async
 # x = await main()
