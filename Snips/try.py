@@ -1,9 +1,11 @@
 # nums = [1, 2, 3, 4]
-
 # for num in nums:
 #     print(num)
-
-from typing import SupportsFloat, TypeVar, Generic, Sequence, List
+from typing import Generic
+from typing import List
+from typing import Sequence
+from typing import SupportsFloat
+from typing import TypeVar
 
 Vector = List[float]
 
@@ -13,9 +15,6 @@ def scale(scalar: float, vector: Vector) -> Vector:
 new_vector = scale(2.0, [1.0, -4.2, 5.4])
 
 # Typing 2 - TypeVar, Generics
-
-
-
 T = TypeVar('T')
 
 class Stack(Generic[T]):
@@ -50,16 +49,16 @@ AnyStr = TypeVar('AnyStr', str, bytes)
 
 
 def repeat(x: T, n: int) -> Sequence[T]:
-    return [x]*n
+    return [x] * n
 
 
-def concat(a: AnyStr, b:AnyStr) -> AnyStr:
+def concat(a: AnyStr, b: AnyStr) -> AnyStr:
     return a + b
 
 print(concat('Helo', 'World'))
 # Uncomment and run python -m mypy Snips/try.py
 # reveal_type(concat(b'foo', b'bar'))
-print(concat(10, 10)) # Works but type checker complains!
+# print(concat(10, 10)) # Works but type checker complains!
 
 print(repeat(x=10, n=10))
 # c = T(10)
@@ -74,7 +73,7 @@ from logging import Logger
 
 # TypeVar can be of any type = unbounded = no restrictions
 # Otherwise TypeVar would need to be defined like TypeVar('T', float, int) for example
-T = TypeVar('T')
+# T = TypeVar('T')
 
 # By inheriting from Generic own classes can be made generic
 class LoggedVar(Generic[T]):
@@ -97,14 +96,13 @@ class LoggedVar(Generic[T]):
 int_logger = LoggedVar[int](value=5, name='Integer Logger')
 int_logger.set(new=10)
 int_logger.set(new=7)
-int_logger.set(new='halo')
+# int_logger.set(new='halo') # type checker complains
 int_logger.set(new=8)
 
-str_logger = LoggedVar[str](value=5, name='Integer Logger')
-str_logger.set(new=10)
-str_logger.set(new=7)
+str_logger = LoggedVar[str](value='stringsonly', name='Integer Logger')
+# str_logger.set(new=10)
 str_logger.set(new='halo')
-str_logger.set(new=8)
+# str_logger.set(new=8)
 
 
 from typing import Generic, overload, Sequence, TypeVar, Union

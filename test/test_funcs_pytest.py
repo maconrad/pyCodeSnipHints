@@ -1,4 +1,5 @@
 import pytest
+
 from snips import funcs_testing
 
 @pytest.fixture

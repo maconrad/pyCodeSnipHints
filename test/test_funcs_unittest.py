@@ -1,4 +1,5 @@
 import unittest
+
 from snips import funcs_testing
 
 class TestFuncs(unittest.TestCase):

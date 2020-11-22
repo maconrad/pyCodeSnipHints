@@ -96,7 +96,7 @@ Libraries
 |isort      |       |Reorder import satements to PEP recommended order|
 |mccabe     |        |Code complexity checker|
 |mypy       |e.g. from typing import Union, Any, Type, SupportsFloat, Dict|Static code analyser based on type hints, integrated into VS Code|
-|pre-commit |       |                |
+|pre-commit |pre-commit install, pre-commit run --all-files |Git Hooks before committing, e.g. flake8, mypy, trailing whitespaces etc.|
 |pylint     |         |                |
 |virtualenv |         |                |
 |virtualenvwrapper     |          |        |

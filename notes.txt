@@ -39,6 +39,10 @@ tox -e py38 -- tests -k unit
 
 
 # Pre-Commit
+
+# Install git hook
+pre-commit install
+
 # Generate sample config
 pre-commit sample-config
 
