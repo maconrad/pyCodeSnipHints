@@ -27,6 +27,10 @@ def test_format_data_for_display(example_people_data):
 def test_hello():
     assert funcs_testing.hello() == 'hello'
 
+@pytest.mark.dummy
+def test_hello3():
+    assert funcs_testing.hello() == 'hello'
+
 @pytest.mark.parametrize("integer_list, below_value, expected_result", [
     ([1, 2, 3, 4], 10, True),
     ([1, 2, 2, 4], 10, True),
