@@ -1,0 +1,38 @@
+# Unittest
+# Needs to inherit from unittest.TestCase
+# Needs a main class
+python -m unittest
+
+# verbose
+python -m unittest -v 
+
+# Discover in current Directory
+python -m unittest discover
+
+# Pytest
+# No inheritance, no main
+
+# Pytest can run unittests
+python -m pytest
+
+# Pytest with marking and durations
+python -m pytest -vv --durations=3 -m dummy
+
+# Pytest can have fixtures = setups etc.
+
+# Tox 
+# Testing in multiple environments
+
+# Create ini file automatically
+tox-quickstart
+
+# run
+tox
+
+# Recreate venv
+tox -r
+
+# Running specific stuff
+# -- tox should ignore these arguments and pass them on to testing
+tox -e py38
+tox -e py38 -- tests -k unit
