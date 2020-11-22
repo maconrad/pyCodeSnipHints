@@ -43,7 +43,7 @@ metadata = dict(
     name=DISTNAME,
     version=VERSION,
     long_description=README,
-    packages=["snips.funcs_testing", "test"],
+    packages=["snips", "test"],
     python_requires=">={}, <={}".format(
         PYTHON_MIN_VERSION, PYTHON_MAX_VERSION),
     install_requires=INSTALL_REQUIRES,
