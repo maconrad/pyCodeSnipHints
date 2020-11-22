@@ -38,11 +38,11 @@ jobs:
         pip3 --version
     - name: Installing
       run: |
-        sudo pip3 install setuptools
+        pip3 install setuptools
         pwd
         ls -all
-        sudo pip3 install -r requirements-dev.txt
-        sudo python setup.py develop
+        pip3 install -r requirements-dev.txt
+        python3 setup.py develop --user
     - name: Testing
       run: |
         make test-all
@@ -59,7 +59,7 @@ jobs:
     - name: install
       run: |
         sudo pip3 install -r requirements-dev.txt
-        sudo python setup.py develop
+        sudo python3 setup.py develop
     - name: test
       run: |
         make test-all
