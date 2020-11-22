@@ -3,12 +3,12 @@ from __future__ import annotations
 from setuptools import setup
 
 
-def get_readme() -> str:
+def get_readme():
     with open("README.md") as f:
         return f.read()
 
 
-def get_license() -> str:
+def get_license():
     with open("LICENSE") as f:
         return f.read()
 
