@@ -39,6 +39,8 @@ jobs:
     - name: Installing
       run: |
         sudo pip3 install setuptools
+        pwd
+        ls -all
         sudo pip3 install -r requirements-dev.txt
         sudo python setup.py develop
     - name: Testing
