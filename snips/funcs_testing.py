@@ -1,3 +1,4 @@
+import random
 from functools import reduce
 
 def hello():
@@ -19,3 +20,7 @@ def below2(integer_list, below_value):
     if summ <= below_value:
         return True
     return False
+
+def roll_dice():
+    print('rolling...')
+    return random.randint(1, 6)
