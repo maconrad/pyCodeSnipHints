@@ -11,6 +11,11 @@ python -m unittest discover
 
 # Pytest
 # No inheritance, no main
+# fixtures
+#  have scopes = default = function
+#  = same fixture created over and over again for every function
+#  could be class, module, package etc.
+#  are searched also in conftest.py file
 
 # Pytest can run unittests
 python -m pytest
