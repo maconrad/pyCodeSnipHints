@@ -14,4 +14,4 @@ IDEs
 * Test Explorer UI
 * Visual Studio Intellicode
 
-## Settings (Whell - Open Settings as JSON)
+## Settings (Wheel - Open Settings as JSON)

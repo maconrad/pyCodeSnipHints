@@ -12,7 +12,8 @@ Libraries
 |futures    |annotations          |     |
 |re         |          |Regex           |
 |datetime   |          |                |
-|collections|          |                |
+|collections|Counter, defaultDict, deque, ChainMap |Enhances dict,list,tuple functionality for special use Cases|
+|copy|copy.copy(), copy.deepcopy()|Deep and Shallow copying|
 |types      |          |                |
 |pprint     |          |                |
 |numbers    |          |                |
@@ -152,5 +153,5 @@ Libraries
 | Library | function / Class etc. | Description |
 |-----------|---------------------|----------------|
 |    |    |                |
-|sdf    |                     |                |
+|Loguru    |   |Enhanced logging library                |
 |xy     |                     |                |
