@@ -104,6 +104,7 @@ Libraries
 |monkeytype|run, stub, apply|Find types used at runtime to move to typed system. Annotate legacy code|
 |pyre||Alternative to mypy for large code base|
 |typing_extensions|Protocol|Structural typing - program to an interface|
+|tqdm|tqdm(iterable)|Progress Bar on loops|
 
 * Web
 
