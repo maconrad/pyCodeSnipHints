@@ -151,8 +151,8 @@ Libraries
 
 * Diverses
 
-| Library | function / Class etc. | Description |
-|-----------|---------------------|----------------|
-|    |    |                |
-|Loguru    |   |Enhanced logging library                |
-|xy     |                     |                |
+| Library   | function / Class etc.       | Description                                |
+|-----------|-----------------------------|--------------------------------------------|
+|Cement     | App, Controller, ex,        | CLI Interface for application              |
+|Loguru     |                             |Enhanced logging library                    |
+|xy         |                             |                                            |
