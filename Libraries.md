@@ -120,13 +120,33 @@ Libraries
 |Selenium  |
 |    |      |
 
+
+* Django Add-ons or Helpful libs when dealing with Django
+
+| Library                           | function / Class etc. | Description                         |
+|-----------------------------------|-----------------------|-------------------------------------|
+|fernet_fields                      | EncryptedTextField    | Encrypts field in DB                |
+|django.contrib.postgres.fields     | JSONField             | JSON Field - deprecated 3.1         |
+|django.db.models.JSONField         | JSONField             | JSON Field*                         |
+|django.urls.reverse                | reverse()             | Returns relative URI                |
+|rest_framework.reverse             | reverse()             | Return absolute URI from WebAPI     |
+|uuid                               | models.UUIDField()    | E.g. default=uuid.uuid4             |
+|channels.generic.websocket         | AsyncWebsocketConsumer| Websocket implementation            |
+|channels.layers                    | get_channel_layer     | Websocket implementation helper     |
+|asgiref.sync                       | async_to_sync         | Websocket implementation helper     |
+|responses                          | add(), add_callback() | Mock requests library               |
+
+* MariaDB 10.2.7+, MySQL 5.7.8+, Oracle, PostgreSQL, and SQLite 3.9.0+ (with the JSON1 extension enabled).
+* ResponseLib - https://github.com/getsentry/responses#basics
+* DRF.reverse - https://www.django-rest-framework.org/api-guide/reverse/
+
 * Data Science
 
 
 | Library | function / Class etc. | Description |
 |-----------|---------------------|----------------|
 |Numpy    |                     |                |
-|Pandas|||
+|Pandas|read_excel, ffill, iloc, iterrows, head, drop, dropna, head, idxmax, isnull, |Working with Dataframes|
 |Matplotlib|||
 |Opencv|||
 ||||
