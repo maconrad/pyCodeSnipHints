@@ -3,6 +3,7 @@ IDEs
 
 # VS Code
 
+
 ## Extensions for Python
 * Python
 * AREPL for python

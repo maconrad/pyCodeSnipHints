@@ -22,18 +22,18 @@ Django
 | Package                                       | Description                                      | 
 |-----------------------------------------------|--------------------------------------------------|
 | django.http                                   | E.g Http404, HttpResponse, HttpResponseRedirect  |
-| django.shortcuts                              | E.g render, get_object_or_404         |
-| django.template                               | E.g loader         |
-| django.urls                                   | E.g. path, reverse             |
+| django.shortcuts                              | E.g render, get_object_or_404                    |
+| django.template                               | E.g loader                                       |
+| django.urls                                   | E.g. path, reverse                               |
 | django.contrib                                | E.g. admin, auth, contenttypes, sessions, messages, staticfiles |
-| django.utils                                  | E.g. timezone       |
-| django.db                                     | E.g. models       |
-| django.views                                  | E.g. generic         |
-| django.test                                   | E.g. TestCase (includes Client), Client        |
-| django.test.utils                             | E.g. setup_test_environment (Template renderer) |
+| django.utils                                  | E.g. timezone                                    |
+| django.db                                     | E.g. models                                      |
+| django.views                                  | E.g. generic                                     |
+| django.test                                   | E.g. TestCase (includes Client), Client          |
+| django.test.utils                             | E.g. setup_test_environment (Template renderer)  |
 
 ## manage.py
-* Before use, create a project with `django-admin startproject mysite`
+* Before use, create a project with `django-admin startproject config .`
 
 | python manage.py ...                          | Description                                      | 
 |-----------------------------------------------|--------------------------------------------------|
@@ -51,7 +51,8 @@ Django
 | drf_create_token                              | Create a Django Rest Framework Token for Auth    |
 | changepassword                                | Change PW for a user                             |
 | startapp <name>                               | Create a new APP                                 |
-| test [app.tests.test_file.py]                 | Run all or specific tests                        |
+| test [app.tests.test_file.testClass.tmethod]  | Run all or specific tests                        |
+| collectstatic                                 | Collect static files and save to STATIC_ROOT     |
 
 See Reference: https://docs.djangoproject.com/en/3.1/ref/django-admin
 
@@ -63,6 +64,19 @@ Auth.objects.create(name='token', type='Bearer', auth_username='admin', auth_val
 token_auth_object = Auth.objects.filter(name='token').first()
 str(token_auth_object)
 ```
+
+## VARIABLES
+* xy
+
+| Variable                                      | Description                                      | 
+|-----------------------------------------------|--------------------------------------------------|
+| STATIC_ROOT                                   | Folder where collectstatic dumps content         |
+| DJANGO_SETTINGS_MODULE                        | Can helpt to adjust environment based on env var |
+| DJANGO_SETTINGS_MODULE="app.settings.prod"    | Example                                          |
+| DJANGO_SECRET_KEY                             | Secret key                                       |
+| DEBUG                                         | Prod/Test (Static files no longer served)        |
+| xy                                            | <todo>                                           |
+| ALLOWED_HOSTS                                 | Should be configured for prod                    |
 
 ## Models
 
@@ -90,6 +104,7 @@ See examples: https://docs.djangoproject.com/en/3.1/topics/db/examples/
 See: https://stackoverflow.com/questions/38388423/what-does-on-delete-do-on-django-models
 
 ### Model Methods
+<todo>
 * order_by()
 * first()
 * filter()
@@ -100,12 +115,10 @@ See: https://stackoverflow.com/questions/38388423/what-does-on-delete-do-on-djan
 See: https://docs.djangoproject.com/en/3.1/topics/db/queries/
 
 ## Signals
+<todo>
 
 ## Websockets
-
-## Extensions Django
-
-* Python
+<todo>
 
 ## Testing
 assertEqual
@@ -133,8 +146,9 @@ See MockTutorial: https://www.integralist.co.uk/posts/mocking-in-python/
 * V2: Injection might be easier
 * T3: Dynamic Return content via Response Lib
 * T4: Assert JSON
-* T5: setUp() Method
+* T5: setUp() Method - Runs before every test
 * T6: fixtures 
+* T7: setUpTestData() - Runs once for the class
 
 V1
 
@@ -240,4 +254,20 @@ class AuthTestCase(TestCase):
 ```
 
 T6: Django Fixtures
+
+
+## Deploying
+* High Level Steps
+  * Split up settings.py (base.py + prod.py + dev.py)
+  * Setup Gunicorn (WSGI HTTP Server) + Nginx (Reverse Proxy + Static Content) Whitenoise (Static Content)
+    * Whitenoise runs as middleware
+  * Create vEnv
+  * Set ENV Vars (DJANGO_SETTINGS_MODULE / DJANGO_SECRET_KEY)
+  * Run migrations
+  * Collect Static
+  * Create superuser
+  * run in background with supervisord (gunicorn is a child process)
+  * Logging
+
+- [Deployment Guide](https://mattsegal.dev/simple-django-deployment.html)
 
