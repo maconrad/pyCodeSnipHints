@@ -19,18 +19,23 @@ Django
 
 ## Important Packages
 
-| Package                                       | Description                                      | 
+| Package                                       | Example Packages / Functions / Classes           | 
 |-----------------------------------------------|--------------------------------------------------|
-| django.http                                   | E.g Http404, HttpResponse, HttpResponseRedirect  |
-| django.shortcuts                              | E.g render, get_object_or_404                    |
-| django.template                               | E.g loader                                       |
-| django.urls                                   | E.g. path, reverse                               |
-| django.contrib                                | E.g. admin, auth, contenttypes, sessions, messages, staticfiles |
-| django.utils                                  | E.g. timezone                                    |
-| django.db                                     | E.g. models                                      |
-| django.views                                  | E.g. generic                                     |
-| django.test                                   | E.g. TestCase (includes Client), Client          |
-| django.test.utils                             | E.g. setup_test_environment (Template renderer)  |
+| django.http                                   | Http404, HttpResponse, HttpResponseRedirect  |
+| django.shortcuts                              | render, get_object_or_404                    |
+| django.template                               | loader                                       |
+| django.urls                                   | path, reverse                               |
+| django.contrib                                | admin, auth, contenttypes, sessions, messages, staticfiles |
+| django.contrib.auth                           | get_user_model()                            |
+| django.utils                                  | timezone                                    |
+| django.db                                     | models                                      |
+| django.views                                  | generic                                     |
+| django.test                                   | TestCase (includes Client), Client          |
+| django.test.utils                             | setup_test_environment (Template renderer)  |
+| rest_framework                                | generics, serializers                       |
+| rest_framework.authtoken                      | Token based authentication                  |
+| rest_framework.permissions                    | Permissions (BasePermission can be extended ) |
+
 
 ## manage.py
 * Before use, create a project with `django-admin startproject config .`
@@ -53,6 +58,8 @@ Django
 | startapp <name>                               | Create a new APP                                 |
 | test [app.tests.test_file.testClass.tmethod]  | Run all or specific tests                        |
 | collectstatic                                 | Collect static files and save to STATIC_ROOT     |
+| generateschema > openapi-schema.yml           | Static generation of schema (one time)           |
+
 
 See Reference: https://docs.djangoproject.com/en/3.1/ref/django-admin
 
@@ -77,6 +84,12 @@ str(token_auth_object)
 | DEBUG                                         | Prod/Test (Static files no longer served)        |
 | xy                                            | <todo>                                           |
 | ALLOWED_HOSTS                                 | Should be configured for prod                    |
+| EMAIL_BACKEND                                 | Email backend                                    |
+| SITE_ID                                       | Django can  host multiple sites (required by django-allauth) |
+| DEFAULT_PERMISSION_CLASSES                    | DRF - Authorization (AllowAny, IsAuthenticated...) |
+| DEFAULT_AUTHENTICATION_CLASSES                | DRF - Authentication (token, session, basic)     |
+| CORS_ORIGIN_WHITELIST                         | Allowed "sources"                                |
+
 
 ## Models
 

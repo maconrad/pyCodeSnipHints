@@ -75,7 +75,7 @@ Libraries
 |-----------|---------------------|----------------|
 |msilib  |     |Microsoft Installer Files  |
 |winreg  |      |Windows Registry Access  |
-
+|winrm or pywinrm   |      | Windows access via VMI, Powershell, cmd, for Kereberos see documentatoin on pypi |
 
 ## PyPi
 * Building / Linting / Testing
@@ -135,6 +135,15 @@ Libraries
 |channels.layers                    | get_channel_layer     | Websocket implementation helper     |
 |asgiref.sync                       | async_to_sync         | Websocket implementation helper     |
 |responses                          | add(), add_callback() | Mock requests library               |
+|whitenoise                         | Middleware            | Serves static files for production  |
+|nginx                              | Reverse Proxy and an alternative to whitenoise for static   |
+|gunicorn                           | WSGI Compatible webserver for django                        |
+|djangorestframework                | DRF                                                         |
+|drf-yasg (pyyaml, uritemplate)     | Swagger and Redoc API Documentaton for DRF projects         |
+|dj-rest-auth                       | Login, Logout, PW Reset, + Registration Endpoint            |
+|django-allauth                     | User Registration FLow + Social Auth (combine with dj-rest-auth) |
+|django-cors-headers                | CorsMiddleware for CORS HTTP Header                         |
+|psycopg2-binary                    | Database Adapter for PostgreSQL                             |
 
 * MariaDB 10.2.7+, MySQL 5.7.8+, Oracle, PostgreSQL, and SQLite 3.9.0+ (with the JSON1 extension enabled).
 * ResponseLib - https://github.com/getsentry/responses#basics
