@@ -35,6 +35,7 @@ Libraries
 |abc    |metaclass |Abstract Base Classes |
 |contextlib|@contextmanager|with-Statement|
 |dataclasses|@dataclass|Annotate instance vars, __init__(), __repr__() and other methods such as __lt__() are auto-generated, PEP557|
+|dataclasses-json|@dataclass_json| Annotate to easily encode/decode into/from json, 3rd party lib|
 |timeit|||
 |test|||
 |unittest|setUp(), tearDown(), @patch, @skipIf, python -m unittest discover|Built-in Unit Testing Library to unittest.mock for Mocking|
