@@ -3,7 +3,7 @@ Django
 
 ## Important Files
 
-| FILE                                          | Description                                      | 
+| FILE                                          | Description                                      |
 |-----------------------------------------------|--------------------------------------------------|
 | app/settings.py                               | project config (e.g. DB, INSTALLED_APPS)         |
 | app/urls.py                                   | URL declarations for this Django project         |
@@ -13,18 +13,18 @@ Django
 
 ## Important URLS
 
-| URL                                           | Description                                      | 
+| URL                                           | Description                                      |
 |-----------------------------------------------|--------------------------------------------------|
 | http://127.0.0.1:8000/admin/                  | Admin Page                                       |
 
 ## Important Packages
 
-| Package                                       | Example Packages / Functions / Classes           | 
+| Package                                       | Example Packages / Functions / Classes           |
 |-----------------------------------------------|--------------------------------------------------|
 | django.http                                   | Http404, HttpResponse, HttpResponseRedirect  |
 | django.shortcuts                              | render, get_object_or_404                    |
 | django.template                               | loader                                       |
-| django.urls                                   | path, reverse                               |
+| django.urls                                   | path, re_path, reverse                       |
 | django.contrib                                | admin, auth, contenttypes, sessions, messages, staticfiles |
 | django.contrib.auth                           | get_user_model()                            |
 | django.utils                                  | timezone                                    |
@@ -35,12 +35,15 @@ Django
 | rest_framework                                | generics, serializers                       |
 | rest_framework.authtoken                      | Token based authentication                  |
 | rest_framework.permissions                    | Permissions (BasePermission can be extended ) |
-
+| django.forms                                  | forms.Form, forms.ModelForm                 |
+| django.core.paginator                         | Paginator, EmptyPage, PageNotAnInteger      |
+| django.models                                 | models.Manager                              |
+| django.core.mail                              | send_mail                                   |
 
 ## manage.py
 * Before use, create a project with `django-admin startproject config .`
 
-| python manage.py ...                          | Description                                      | 
+| python manage.py ...                          | Description                                      |
 |-----------------------------------------------|--------------------------------------------------|
 | runserver [0.0.0.0:8000]                      | Run Development server                           |
 | showmigrations <app-name>                     | Show migrations and if applied                   |
@@ -75,7 +78,7 @@ str(token_auth_object)
 ## VARIABLES
 * xy
 
-| Variable                                      | Description                                      | 
+| Variable                                      | Description                                      |
 |-----------------------------------------------|--------------------------------------------------|
 | STATIC_ROOT                                   | Folder where collectstatic dumps content         |
 | DJANGO_SETTINGS_MODULE                        | Can helpt to adjust environment based on env var |
@@ -89,7 +92,8 @@ str(token_auth_object)
 | DEFAULT_PERMISSION_CLASSES                    | DRF - Authorization (AllowAny, IsAuthenticated...) |
 | DEFAULT_AUTHENTICATION_CLASSES                | DRF - Authentication (token, session, basic)     |
 | CORS_ORIGIN_WHITELIST                         | Allowed "sources"                                |
-
+| EMAIL_HOST, _PORT, _HOST_USER, _HOST_PASSWORD | Email Stuff 1                                    |
+| EMAIL_USE_TLS, _USE_SSL, EMAIL_BACKEND        | Email Stuff 2                                    |
 
 ## Models
 
@@ -104,6 +108,7 @@ str(token_auth_object)
 | OneToOneField                   | 1-to-1 relation             | on_delete                     |
 | JSONField                       | JSON Data                   | 3.1 default, before extension |
 | EncryptedTextField              | Encrypted in DB             | With SECRET_KEY by default    |
+| SlugField                       | Stores Slug for SEO         | unique_for_...                |
 
 * max_length=100, blank=True, null=True, default=xy, primary_key=True, editable=False
 * on_delete=models.CASCADE
@@ -154,13 +159,13 @@ See TestingFramework: https://docs.djangoproject.com/en/3.1/topics/testing/advan
 See RealPythonTutorial: https://realpython.com/python-mock-library/#patching-an-objects-attributes
 See MockTutorial: https://www.integralist.co.uk/posts/mocking-in-python/
 
-### Examples 
+### Examples
 * V1: "Standard Mocking"
 * V2: Injection might be easier
 * T3: Dynamic Return content via Response Lib
 * T4: Assert JSON
 * T5: setUp() Method - Runs before every test
-* T6: fixtures 
+* T6: fixtures
 * T7: setUpTestData() - Runs once for the class
 
 V1
@@ -255,13 +260,13 @@ class AuthTestCase(TestCase):
 
     def test_auth_api_call_basic(self):
         """Test if api gets called with correct auth method of basic"""
-        
+
 		auth_basic = Auth.objects.get(name="basic")
         self.assertEqual(auth_basic.name, 'basic')
 
     def test_auth_api_call_token(self):
         """Test if api gets called with correct auth method of token"""
-        
+
 		auth_token = Auth.objects.get(name="token")
         self.assertEqual(auth_token.name, 'token')
 ```
@@ -283,4 +288,3 @@ T6: Django Fixtures
   * Logging
 
 - [Deployment Guide](https://mattsegal.dev/simple-django-deployment.html)
-
