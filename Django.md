@@ -109,6 +109,7 @@ str(token_auth_object)
 * on_delete=models.CASCADE
 
 See Reference: https://docs.djangoproject.com/en/3.1/ref/models/fields/
+See Reference: https://realpython.com/django-migrations-a-primer/#unapplying-migrations (Migrations)
 
 ### Reverse Reference
 <todo>
@@ -132,6 +133,11 @@ See: https://docs.djangoproject.com/en/3.1/topics/db/queries/
 
 ## Websockets
 <todo>
+
+## DRF
+<todo>
+See Reference: https://stackoverflow.com/questions/30719117/django-rest-api-get-function (validated_data = orderedDict)
+--> OrderedDict.get(key, default)
 
 ## Testing
 assertEqual
